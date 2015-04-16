@@ -8,6 +8,9 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class AplicacionTriangulo {
 
@@ -15,6 +18,7 @@ public class AplicacionTriangulo {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	
 
 	/**
 	 * Launch the application.
@@ -42,16 +46,16 @@ public class AplicacionTriangulo {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JLabel lblLado = new JLabel("Lado 1:");
 		
-		JLabel label = new JLabel("Lado 1:");
+		JLabel lblLado_2 = new JLabel("Lado 2:");
 		
-		JLabel label_1 = new JLabel("Lado 1:");
+		JLabel lblLado_3 = new JLabel("Lado 3:");
 		
 		textField = new JTextField();
 		textField.setColumns(10);
@@ -61,22 +65,33 @@ public class AplicacionTriangulo {
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
+		
+		JButton btnCrearTriangulo = new JButton("Crear Triangulo");
+		btnCrearTriangulo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JTextField numero1 = textField;
+				JTextField numero2 = textField_1;
+				JTextField numero3 = textField_2;
+				
+			}
+		});
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(31)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(btnCrearTriangulo)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(lblLado)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
+							.addComponent(lblLado_3, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(label, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
+							.addComponent(lblLado_2, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(241, Short.MAX_VALUE))
@@ -90,13 +105,15 @@ public class AplicacionTriangulo {
 						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(label)
+						.addComponent(lblLado_2)
 						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(label_1)
+						.addComponent(lblLado_3)
 						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(143, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(btnCrearTriangulo)
+					.addContainerGap(104, Short.MAX_VALUE))
 		);
 		frame.getContentPane().setLayout(groupLayout);
 	}
