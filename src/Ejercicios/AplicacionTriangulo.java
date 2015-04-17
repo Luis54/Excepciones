@@ -50,7 +50,7 @@ public class AplicacionTriangulo {
 	 * Initialize the contents of the frame.
 	 */
 	public void initialize() {
-		frame = new JFrame("Prgrama Creacion Triangulos");
+		frame = new JFrame("Programa Creacion Triangulos");
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(AplicacionTriangulo.class.getResource("/imagenes/icono.png")));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -84,10 +84,10 @@ public class AplicacionTriangulo {
 				int numero3 = Integer.parseInt(n3);
 				try {
 					Triangulo t = new Triangulo(numero1, numero2, numero3);
-					textArea.setText("Triangulo Creado Correctamente\n Con lado 1 = "+numero1+ " Lado 2 = "+numero2+ " y Lado 3= "+numero3);
+					textArea.setText("Triangulo Creado Correctamente\n Con lado 1 = "+numero1+ " Lado 2 = "+numero2+ " y Lado 3= "+numero3+"\nPermietro del triangulo es: "
+							+t.perimetrosTriangulo());
 				} catch (IlegalTrianguloExcepcion e1) {
 					// TODO Auto-generated catch block
-					e1.printStackTrace();
 					textArea.setText("Triangulo Creado no valido");
 				}
 				

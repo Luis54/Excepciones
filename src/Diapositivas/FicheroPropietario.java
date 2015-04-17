@@ -8,8 +8,8 @@ public class FicheroPropietario {
 		// TODO Auto-generated method stub
 		ResourceBundle configuracion = ResourceBundle.getBundle("configuracion");
 		String usuario = configuracion.getString("login");
-		String contrase�a = configuracion.getString("clave");
-		System.out.println("El nombre de usuario es: "+usuario+"y la contraseña es: "+contrase�a);
+		String contraseña = configuracion.getString("clave");
+		System.out.println("El nombre de usuario es: "+usuario+"y la contraseña es: "+contraseña);
 	}
 
 }
